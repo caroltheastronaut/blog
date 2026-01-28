@@ -2,5 +2,8 @@ title: "Blog"
 description: "Blog em Jekyll com tema minima"
 theme: minima
 
+url: "https://blog.caroltheastronaut.com"
+baseurl: ""
+
 plugins:
   - jekyll-feed
