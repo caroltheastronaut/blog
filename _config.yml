@@ -1,0 +1,6 @@
+title: "O meu blog"
+description: "Blog em Jekyll com tema minima"
+theme: minima
+
+plugins:
+  - jekyll-feed
