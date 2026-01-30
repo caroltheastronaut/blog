@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<article class="mx-auto" style="max-width: 860px;">
+  <header class="mb-4">
+    <h1 class="display-6 mb-2">{{ page.title | escape }}</h1>
+
+    <div class="text-body-secondary small">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: date_format }}
+      </time>
+
+      {%- if page.categories and page.categories.size > 0 -%}
+        <span class="mx-2">•</span>
+        <span>
+          {%- for cat in page.categories -%}
+            <span class="badge text-bg-light border">{{ cat }}</span>
+          {%- endfor -%}
+        </span>
+      {%- endif -%}
+    </div>
+  </header>
+
+  <div class="fs-5 lh-lg">
+    {{ content }}
+  </div>
+</article>
