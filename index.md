@@ -1,3 +1,7 @@
 ---
-layout: home
+layout: page
+title: About
+permalink: /
 ---
+
+{% include_relative about.md %}
