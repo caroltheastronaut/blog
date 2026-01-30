@@ -2,7 +2,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>
-  {%- if page.title -%}{{ page.title }} · {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}
+  {%- if page.url == "/" -%}
+    {{ site.title }}
+  {%- elsif page.title -%}
+    {{ page.title }} · {{ site.title }}
+  {%- else -%}
+    {{ site.title }}
+  {%- endif -%}
 </title>
 
 {%- if site.description -%}
