@@ -4,8 +4,7 @@ theme: minima
 
 url: "https://blog.caroltheastronaut.com"
 baseurl: ""
+show_excerpts: true
 
 plugins:
   - jekyll-feed
-
-show_excerpts: true
