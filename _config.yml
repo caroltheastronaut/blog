@@ -5,7 +5,6 @@ url: "https://blog.caroltheastronaut.com"
 baseurl: ""
 show_excerpts: true
 header_pages:
-  - index.md
   - portfolio.md
 
 plugins:
