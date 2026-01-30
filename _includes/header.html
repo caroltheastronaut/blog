@@ -6,8 +6,7 @@
         <span class="fs-4 fw-semibold">{{ site.title | escape }}</span>
       </a>
 
-      {%- assign default_paths = site.pages | map: "path" -%}
-      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      {%- assign page_paths = site.header_pages -%}
 
       {%- if page_paths -%}
         <ul class="nav nav-pills">
