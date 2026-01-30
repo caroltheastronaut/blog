@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Escreve aqui.
+Escreve aqui o teu texto “about”.
