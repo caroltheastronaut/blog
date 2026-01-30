@@ -1,44 +1,44 @@
 <header class="border-bottom">
-  <div class="container">
-    <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-between py-3">
-
-      <a href="{{ '/' | relative_url }}"
-         class="d-flex align-items-center text-decoration-none mb-3 mb-md-0">
-        <span class="fs-4 fw-semibold">{{ site.title | escape }}</span>
+  <nav class="navbar navbar-expand-lg bg-body">
+    <div class="container py-2">
+      <a class="navbar-brand fw-semibold text-dark text-decoration-none" href="{{ '/' | relative_url }}">
+        {{ site.title | escape }}
       </a>
 
-      {%- assign page_paths = site.header_pages -%}
-      {%- if page_paths -%}
-        <ul class="nav nav-pills justify-content-center">
-          {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav"
+              aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-              {%- assign is_active = false -%}
-              {%- if page.url == my_page.url -%}
-                {%- assign is_active = true -%}
-              {%- endif -%}
-              {%- if my_page.url == '/portfolio/' and page.layout == 'post' -%}
-                {%- assign is_active = true -%}
-              {%- endif -%}
+      <div class="collapse navbar-collapse" id="siteNav">
+        {%- assign page_paths = site.header_pages -%}
+        {%- if page_paths -%}
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            {%- for path in page_paths -%}
+              {%- assign my_page = site.pages | where: "path", path | first -%}
+              {%- if my_page.title -%}
 
-              <li class="nav-item">
-                {%- if is_active -%}
-                  <a href="{{ my_page.url | relative_url }}" class="nav-link active" aria-current="page">
-                    {{ my_page.title | escape }}
-                  </a>
-                {%- else -%}
-                  <a href="{{ my_page.url | relative_url }}" class="nav-link">
-                    {{ my_page.title | escape }}
-                  </a>
+                {%- assign is_active = false -%}
+                {%- if page.url == my_page.url -%}
+                  {%- assign is_active = true -%}
                 {%- endif -%}
-              </li>
+                {%- if my_page.url == '/portfolio/' and page.layout == 'post' -%}
+                  {%- assign is_active = true -%}
+                {%- endif -%}
 
-            {%- endif -%}
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
+                <li class="nav-item">
+                  <a class="nav-link{% if is_active %} active{% endif %}"
+                     {% if is_active %}aria-current="page"{% endif %}
+                     href="{{ my_page.url | relative_url }}">
+                    {{ my_page.title | escape }}
+                  </a>
+                </li>
 
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
     </div>
-  </div>
+  </nav>
 </header>
