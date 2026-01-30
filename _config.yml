@@ -6,7 +6,6 @@ baseurl: ""
 show_excerpts: true
 header_pages:
   - index.md
-  - blog.md
 
 plugins:
   - jekyll-feed
