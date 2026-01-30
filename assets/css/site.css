@@ -1,0 +1,10 @@
+/* Polimento minimalista para conteúdo Markdown */
+main img { max-width: 100%; height: auto; }
+
+main p { margin-bottom: 1rem; }
+main h1, main h2, main h3, main h4 { margin-top: 2rem; margin-bottom: 1rem; }
+main ul, main ol { margin-bottom: 1rem; }
+
+main pre, main code { font-size: 0.95em; }
+main pre { padding: 1rem; border-radius: .5rem; overflow: auto; }
+main blockquote { padding-left: 1rem; border-left: 4px solid rgba(0,0,0,.1); }
