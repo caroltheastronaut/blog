@@ -13,8 +13,18 @@
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
+              {%- assign is_active = false -%}
+        
+              {%- if page.url == my_page.url -%}
+                {%- assign is_active = true -%}
+              {%- endif -%}
+        
+              {%- if my_page.url == '/portfolio/' and page.layout == 'post' -%}
+                {%- assign is_active = true -%}
+              {%- endif -%}
+        
               <li class="nav-item">
-                {%- if page.url == my_page.url -%}
+                {%- if is_active -%}
                   <a href="{{ my_page.url | relative_url }}" class="nav-link active" aria-current="page">
                     {{ my_page.title | escape }}
                   </a>
