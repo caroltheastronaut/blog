@@ -1,8 +1,14 @@
 <header class="border-bottom">
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
     <div class="container py-2">
-      <a class="navbar-brand fw-semibold text-decoration-none" href="{{ '/' | relative_url }}">
-        {{ site.title | escape }}
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold text-decoration-none"
+         href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/img/caroltheastronaut.png' | relative_url }}"
+             alt="Logo"
+             width="32"
+             height="32"
+             class="d-inline-block align-text-top">
+        <span>{{ site.title | escape }}</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav"
