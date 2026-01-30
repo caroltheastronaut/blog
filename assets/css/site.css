@@ -31,3 +31,6 @@ main blockquote {
     --bs-gutter-x: 3rem;
   }
 }
+
+body { outline: 5px solid red; }
+
