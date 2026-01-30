@@ -28,9 +28,9 @@ main blockquote {
   header .container,
   main.container,
   footer .container {
-    --bs-gutter-x: 3rem;
+    --bs-gutter-x: 3.5rem;
   }
 }
 
-body { outline: 5px solid red; }
+body { outline: 5px solid green; }
 
