@@ -2,7 +2,7 @@
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-between py-3">
 
-      <a href="{{ '/' | relative_url }}" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+      <a href="{{ '/' | relative_url }}" class="d-flex align-items-center text-decoration-none">
         <span class="fs-4 fw-semibold">{{ site.title | escape }}</span>
       </a>
 
@@ -10,15 +10,20 @@
       {%- assign page_paths = site.header_pages | default: default_paths -%}
 
       {%- if page_paths -%}
-        <ul class="nav">
+        <ul class="nav nav-pills">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
               <li class="nav-item">
-                <a href="{{ my_page.url | relative_url }}"
-                   class="nav-link px-2{% if page.url == my_page.url %} link-primary fw-semibold{% else %} link-secondary{% endif %}">
-                  {{ my_page.title | escape }}
-                </a>
+                {%- if page.url == my_page.url -%}
+                  <a href="{{ my_page.url | relative_url }}" class="nav-link active" aria-current="page">
+                    {{ my_page.title | escape }}
+                  </a>
+                {%- else -%}
+                  <a href="{{ my_page.url | relative_url }}" class="nav-link">
+                    {{ my_page.title | escape }}
+                  </a>
+                {%- endif -%}
               </li>
             {%- endif -%}
           {%- endfor -%}
