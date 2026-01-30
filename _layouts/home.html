@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="mx-auto" style="max-width: 860px;">
+  {%- if page.title -%}
+    <!-- Mantém compatibilidade se um dia você decidir usar título na home -->
+    <header class="mb-4">
+      <h1 class="h3 mb-0">{{ page.title | escape }}</h1>
+    </header>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    {%- assign list_title = page.list_title | default: "Posts" -%}
+
+    {%- if page.list_title == nil -%}
+      <!-- No Minima demo normalmente não há heading; então só mostramos se você definir list_title -->
+    {%- else -%}
+      <h2 class="h4 mt-4">{{ list_title | escape }}</h2>
+    {%- endif -%}
+
+    <div class="list-group list-group-flush mt-3">
+      {%- for post in site.posts -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <a class="list-group-item list-group-item-action py-3" href="{{ post.url | relative_url }}">
+          <div class="d-flex w-100 justify-content-between">
+            <h3 class="h5 mb-1">{{ post.title | escape }}</h3>
+            <small class="text-body-secondary">{{ post.date | date: date_format }}</small>
+          </div>
+
+          {%- if site.show_excerpts -%}
+            <p class="mb-0 text-body-secondary">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
