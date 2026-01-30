@@ -6,6 +6,8 @@ baseurl: ""
 show_excerpts: true
 header_pages:
   - portfolio.md
+titles_from_headings:
+  enabled: false
 
 plugins:
   - jekyll-feed
