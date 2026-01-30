@@ -6,7 +6,7 @@ baseurl: ""
 show_excerpts: true
 header_pages:
   - index.md
-  - blog.md
+  - porfolio.md
 
 plugins:
   - jekyll-feed
